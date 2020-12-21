@@ -4,6 +4,7 @@
   "description": "Lightweight Config management tool",
   "main": "index.js",
   "dependencies": {
+    "mkdirp": "^1.0.4",
     "shelljs": "^0.8.4"
   },
   "devDependencies": {

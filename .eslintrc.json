@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2020": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "semi": [
+            "error",
+            "always"
+        ],
+        "global-require" : [
+            "error"
+        ],
+        "handle-callback-err": [
+            "error"
+        ],
+        "no-useless-escape": [
+            0
+        ],
+        "no-trailing-spaces" : [0],
+        "one-var" : [0],
+        "no-unused-vars" : 0
+    }
+}

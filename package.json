@@ -1,0 +1,17 @@
+{
+  "name": "configu",
+  "version": "1.0.0",
+  "description": "Lightweight Config management tool",
+  "main": "index.js",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "author": "Rahul Raman",
+  "license": "ISC"
+}

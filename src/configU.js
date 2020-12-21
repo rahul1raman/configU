@@ -1,7 +1,7 @@
 const fs = require('fs');
 const sh = require('shelljs');
 
-
+//============= File related methods =================
 exports.saveFileContent = (filepath, content) => {
     try {
         // If file doesn't exist, save content
@@ -21,14 +21,14 @@ exports.saveFileContent = (filepath, content) => {
     }
 };
 
-exports.removeFile = function remove (filepath) {
+exports.removeFile = (filepath) => {
     if (fs.existsSync(filepath)) {
         fs.unlinkSync(filepath);
         console.info(`File ${filepath} has been removed.`);
     }
 };
   
-exports.writeFilePermissions = function write (filepath, mode) {
+exports.writeFilePermissions = (filepath, mode) => {
     try {
         fs.chmodSync(filepath, mode);
     } catch (error) {
@@ -36,11 +36,23 @@ exports.writeFilePermissions = function write (filepath, mode) {
     }
 };
   
-exports.writeFileOwner = function write (filepath, uid, gid) {
+exports.writeFileOwner = (filepath, uid, gid) => {
     try {
         fs.chownSync(filepath, uid, gid);
     } catch (error) {
         console.error(`Failed to change owner at ${filepath}. ${error}`);
     }
+};
+
+
+// =========  PACKAGE related methods =================
+exports.installPackage = function install (pkg) {
+    console.log(`Installing ${pkg}`);
+    sh.exec(`sudo apt-get -y install ${pkg}`);
+};
+  
+exports.removePackage = function remove (pkg) {
+    console.log(`Removing ${pkg}`);
+    sh.exec(`sudo apt-get -y remove ${pkg}`);
 };
 

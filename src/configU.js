@@ -23,6 +23,19 @@ exports.saveFileContent = (filepath, content) => {
     }
 };
 
+exports.addContentToFile = (filepath, content) => {
+    // Add content to the end of an existing file
+    if (!fs.existsSync(filepath)) {
+        console.error(`File does not exist, cannot append to ${filepath}`);
+    } else {
+        var existingFile = fs.readFileSync(filepath, 'utf8');
+        if (!existingFile.includes(content)) {
+            fs.appendFileSync(filepath, content);
+            console.log(`The file ${filepath} updated with content.`);
+        }
+    }
+};
+
 exports.removeFile = (filepath) => {
     if (fs.existsSync(filepath)) {
         fs.unlinkSync(filepath);

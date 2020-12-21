@@ -20,8 +20,7 @@ echo "Hello, world!\n"; ?>`;
   
 // Install packages
 configU.installPackage('apache2');
-configU.installPackage('libapache2-mod-php5');
-configU.installPackage('php5');
+configU.installPackage('php7.2');
   
 // Configure Apache Files
 configU.removeFile(`${apacheRoot}/index.html`, 'apache2');

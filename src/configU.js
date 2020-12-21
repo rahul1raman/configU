@@ -114,7 +114,7 @@ exports.restartService = (service, files = []) => {
     }
     if (shouldRestart) {
       console.log(`Restarting ${service}.`);
-      sh.exec(`sudo service ${service} restart`);
+      sh.exec(`sudo systemctl restart ${service}`);
     }
   };
   
